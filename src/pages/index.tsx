@@ -1,12 +1,19 @@
 import React from 'react';
+import { MainLayout } from '../components/Layout/MainLayout';
+import { MonacoEditor } from '../components/Editor/MonacoEditor';
+import { Assistant } from '../components/AI/Assistant';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <main className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold">CodeGenius Platform</h1>
-        <p className="mt-4 text-xl">Next-generation AI-powered development platform</p>
-      </main>
-    </div>
+    <MainLayout>
+      <div className="flex h-full">
+        <div className="flex-1">
+          <MonacoEditor />
+        </div>
+        <div className="w-96">
+          <Assistant />
+        </div>
+      </div>
+    </MainLayout>
   );
 }
